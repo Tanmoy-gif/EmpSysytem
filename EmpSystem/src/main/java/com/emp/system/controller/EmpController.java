@@ -19,6 +19,15 @@ import jakarta.servlet.http.HttpSession;
 
 public class EmpController {
 	
+	//Just to check git
+	
+	@GetMapping("/user")
+	public String getUser(Model m) {
+		List<Employee> emp=service.getAllEmp();
+		m.addAttribute("emp", emp);
+		return"index";
+	}
+	
 	@Autowired
 	private EmpService service;
 	
